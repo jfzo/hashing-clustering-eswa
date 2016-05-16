@@ -24,6 +24,7 @@ int main(int argc, char* argv[])
 {
 
     if(argc  != 3 ) {
+        cerr << "Usage: " << argv[0] << " n hyp-filename-path\n";
         return -1;
     }
 
