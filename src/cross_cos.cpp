@@ -23,14 +23,14 @@ int i, j, k;
 int main(int argc, char* argv[])
 {
 
-    if(argc  != 3 ) {
-        cerr << "Usage: " << argv[0] << " n hyp-filename-path\n";
+    if(argc  != 2 ) {
+        cerr << "Usage: " << argv[0] << " hyp-filename-path\n";
         return -1;
     }
 
     int rows, cols;
     int n;// = atoi(argv[1]);
-    string filename(argv[2]);
+    string filename(argv[1]);
     string line;
 
  
