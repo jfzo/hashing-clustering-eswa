@@ -29,10 +29,10 @@ int main(int argc, char* argv[])
     }
 
     int rows, cols;
-    int n = atoi(argv[1]);
+    int n;// = atoi(argv[1]);
     string filename(argv[2]);
     string line;
-    string foo = std::to_string(n);
+
  
     // ifstream myfile ("sorted_rows.txt"); // 10x8
     //ifstream myfile ("tf-idf-hyp["+foo+"].txt");
@@ -55,6 +55,9 @@ int main(int argc, char* argv[])
         cols = stoi(val_wr);
         cout << "rows:"<<rows << " cols:" << cols << endl;
     }
+
+    n = rows;
+    string foo = std::to_string(n);
 
     float** cosine_graph = new float*[cols];// [cols][cols];
     for(i=0; i<cols; i++){
