@@ -5,7 +5,7 @@
 * __Note 1:__ you need to compile each source code using g++ -std=c++0x -o foo.o foo.cpp
 * __Note 2:__ The values for parameters B and P could be safely set to 1073741824 and 2147483647
 
-* Creating signatures from an input file with _sparse_min_hashing_. It takes an input file in Cluto's format, and generates a _FILE_IN_CLUTOS_FORMAT[_SIGNATURE_LEN_].txt_ file with an _SIGNATURE_LEN_ dimensional signature in each column.
+* Creating signatures from an input file with _sparse_min_hashing_. It takes an input file in Cluto's format, and generates a `FILE_IN_CLUTOS_FORMAT[_SIGNATURE_LEN_].txt` file with a `SIGNATURE_LEN` dimensional signature in each column.
   ```
    $ ./sparse_min_hashing SIGNATURE_LEN B P FILE_IN_CLUTOS_FORMAT
   ```
