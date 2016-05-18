@@ -17,7 +17,7 @@
 
 * Using sparse_lsh we produce our variation of min-wise using bucket traversal. It takes a signature file as input and produces a `-[b-r].txt` file. We can use bands of rows, specifying parameters _b_  and _r_ , whose product is the total number of rows of the matrix. In our paper we discarded the use of multibands (r>1).
   ```
-  $ ./sparse_lsh.o  b r signature-input-file
+  $ ./sparse_lsh  b r signature-input-file
   ```
 
 * Creating signatures with `simple_random_hyp`. It takes a term-document matrix in Cluto's format, generates `hyp[SIGNATURE_LEN].txt` file and a  `penalty-hyp[SIGNATURE_LEN].txt` files, which corresponds to signatures created using the original variation of random hyperplanes __[Charikar 2002]__ and the input used by our penalized Hamming, respectively.
