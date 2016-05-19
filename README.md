@@ -26,7 +26,7 @@
   $ ./simple_random_hyp SIGNATURE_LEN B P FILE_IN_CLUTOS_FORMAT
   ```
   
-* Using cross_cos we generate cosine similarity matrices from random hyperplanes signatures. It takes a `-hyp[n].txt´ and produces `matrix_2_sig_hyp[n].txt`. The value of `n`, i.e. the signature length, must lesser or equal than the signature stored at the `-hyp[n].txt` file.
+* Using cross_cos we generate cosine similarity matrices from random hyperplanes signatures. It takes a `-hyp[n].txt´ and produces _matrix_2_sig_hyp[n].txt_. The value of `n`, i.e. the signature length, must less or equal than the signature stored at the `-hyp[n].txt` file.
 
   ```
   $ ./cross_cos SIGNATURE_LEN hyp-filename-path
