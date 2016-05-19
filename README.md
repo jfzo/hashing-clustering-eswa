@@ -26,16 +26,16 @@
   $ ./simple_random_hyp SIGNATURE_LEN B P FILE_IN_CLUTOS_FORMAT
   ```
   
-* Using cross_cos we generate cosine similarity matrices from random hyperplanes signatures. It takes a `-hyp[n].txt´ and produces _matrix_2_sig_hyp[n].txt_. The value of `n`, i.e. the signature length, must less or equal than the signature stored at the `-hyp[n].txt` file.
+* Using cross_cos we generate cosine similarity matrices from random hyperplanes signatures. It takes a `-hyp[n].txt´ and produces _matrix_2_sig_hyp[n].txt_. The value of  `n`,  i.e. the signature length, must be less or equal than the signature stored at the `-hyp[n].txt` file.
 
   ```
   $ ./cross_cos SIGNATURE_LEN hyp-filename-path
   ```
 
-* Using cross_penalty we generate a similarity matrix that approximates the cosine similarity using penalized Hamming. It takes two inputs, a `-hyp[n].txt` (the mask of bits achieved using random hyperplanes) and a `penalty-hyp[n].txt` (the signature). It produces a `matrix_2_sig_hyp_pen[n].txt` file.
+* Using cross_penalty we generate a similarity matrix that approximates the cosine similarity using penalized Hamming. It takes two inputs, a `-hyp[n].txt` (the mask of bits achieved using random hyperplanes) and a `penalty-hyp[n].txt` (the signature). It produces a `matrix_2_sig_hyp_pen[n].txt` file. The value of  `n`,  i.e. the signature length, must be less or equal than the signature stored at the `-hyp[n].txt` file.
 
   ```
-  $ ./cross_penalty hyp-input-filename penalty-input-filename
+  $ ./cross_penalty SIGNATURE_LEN hyp-input-filename penalty-input-filename
   ```
 
 
