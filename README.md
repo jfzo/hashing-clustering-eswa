@@ -47,7 +47,7 @@
 * Cluto clustering: scluster -clmethod=graph -grmodel=sd -nnbrs=30 -rclassfile=tf-idf.dat.rlabel matrix*.txt k, where k is the number of clusters.
 
 
-## Discarded in this paper
+### Discarded in this paper
 
 Multi-bandit LSH signatures are created using sparse_lsh. We can use bands of rows, specifying parameters  and  , whose product is the total number of rows of the matrix  . In our paper we used  discarding its use. It takes penalty-hyp[n].txt and produces matrix-n-penalty-hyp-[b-r].txt.
 
@@ -56,3 +56,67 @@ $ ./sparse_lsh.o 200 1
 ```
 
 it generates matrix-200-penalty-hyp-[200-1].txt. No significant improvements were achieved using this variation.
+
+## Results
+
+### Entropy statistics
+
+| k  | Cosine | RH-500|RH-1000 | RH-1500 | RH-2000 | RHp-500  |RHp-1000  | RHp-1500 | RHp-2000 |
+|---:|:------:|:-----:|:------:|:-------:|:-------:|:--------:|:--------:|:--------:|:--------:|
+| 5  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|10  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|15  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|20  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|25  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|30  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|35  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|40  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|45  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|50  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+
+
+### Purity statistics
+
+| k  | Cosine | RH-500|RH-1000 | RH-1500 | RH-2000 | RHp-500  |RHp-1000  | RHp-1500 | RHp-2000 |
+|---:|:------:|:-----:|:------:|:-------:|:-------:|:--------:|:--------:|:--------:|:--------:|
+| 5  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|10  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|15  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|20  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|25  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|30  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|35  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|40  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|45  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|50  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+
+
+### Entropy
+
+| k  | Jaccard| MW-2000 | MWb-500  |MWb-1000  | MWb-1500 | MWb-2000 |
+|---:|:------:|:-------:|:--------:|:--------:|:--------:|:--------:|
+| 5  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|10  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|15  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|20  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|25  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|30  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|35  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|40  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|45  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|50  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+
+### Purity
+
+| k  | Jaccard| MW-2000 | MWb-500  |MWb-1000  | MWb-1500 | MWb-2000 |
+|---:|:------:|:-------:|:--------:|:--------:|:--------:|:--------:|
+| 5  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|10  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|15  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|20  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|25  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|30  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|35  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|40  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|45  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
+|50  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
