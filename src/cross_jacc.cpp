@@ -21,16 +21,18 @@ int i, j, k;
 int main(int argc, char* argv[])
 {
 
-    if( argc < 2 ) {
-        cout<< "Usage: "<< argv[0] << " signature-input-file"<<endl;
+    if( argc < 3 ) {
+        cout<< "Usage: "<< argv[0] << " SIGNATURE_LEN(<input file signature length)  signature-input-file"<<endl;
         return -1;
     }
 
     int cols, rows;
 
     string line;
-    //string foo = std::to_string(rows);
-    string filename (argv[1]);
+    int n;
+    n= stoi(argv[1]);
+    //string foo = std::to_string(n);
+    string filename (argv[2]);
     //ifstream myfile ("tf-idf["+foo+"].txt");
     ifstream myfile (filename);
     boost::char_separator<char> sep(" ");
@@ -50,6 +52,8 @@ int main(int argc, char* argv[])
         cout << "rows: " << rows << " cols: " << cols << endl;
     }
 
+    assert(n < rows);
+
     float** jaccard_graph = new float*[cols];// [cols][cols];
     for(i=0; i<cols; i++){
         jaccard_graph[i] = new float[cols];
@@ -58,8 +62,8 @@ int main(int argc, char* argv[])
     }
 
 
-    int** bit_matrix = new int*[rows];//[rows][cols];
-    for(i=0; i<rows; i++){
+    int** bit_matrix = new int*[n];//[rows][cols];
+    for(i=0; i<n; i++){
         bit_matrix[i] = new int[cols];
         for(j=0; j<cols; j++)
             bit_matrix[i][j] = 0;
@@ -83,6 +87,8 @@ int main(int argc, char* argv[])
             }
             i++;
             j = 0;
+            if(n==i)
+                break;
         }
     } else std::cout << "Unable to open file!";
     cout << "matrix read\n";
@@ -93,7 +99,7 @@ int main(int argc, char* argv[])
         for (j=0; j<cols; j++) {
             num = 0;
             den = 0;
-            for (k=0; k<rows; k++) {
+            for (k=0; k<n; k++) {
                 if (bit_matrix [k][i] == bit_matrix [k][j]) {
                     den++;
                     num++;
@@ -107,7 +113,7 @@ int main(int argc, char* argv[])
         // cout << std::to_string(i) << endl;
     }
     ofstream outfile;
-    outfile.open (filename+"_matrix_2_sig.txt");
+    outfile.open (filename+"_matrix_2_sig["+std::to_string(n)+"].txt");
     outfile << cols << '\n';
     float sim;
     for (i=0; i<cols; i++) {
@@ -126,7 +132,7 @@ int main(int argc, char* argv[])
     delete[] jaccard_graph;
 
 
-    for(i=0; i<rows; i++)
+    for(i=0; i<n; i++)
         delete[] bit_matrix[i];
     delete[] bit_matrix;
 
