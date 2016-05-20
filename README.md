@@ -10,9 +10,9 @@
    $ ./sparse_min_hashing SIGNATURE_LEN B P FILE_IN_CLUTOS_FORMAT
   ```
 
-* Cross_jacc produces a Jaccard pairwise similarity matrix from a signature file. The number of hash functions is defined in the header of the signature file generated in the previous step. The output matrix is flushed to a matrix_2_sig[rows].txt file.
+* Cross_jacc produces a Jaccard pairwise similarity matrix from a signature file. The number of hash functions is defined in the header of the signature file generated in the previous step. The output matrix is flushed to a matrix_2_sig[rows].txt file. The first parameter, i.e. the signature length to use for similarity estimation, must be less or equal than the number of rows in the input file.
   ```
-  $ ./cross_jacc signature-input-file
+  $ ./cross_jacc SIGNATURE_LEN signature-input-file
   ```
 
 * Using sparse_lsh we produce our variation of min-wise using bucket traversal. It takes a signature file as input and produces a `-[b-r].txt` file. We can use bands of rows, specifying parameters _b_  and _r_ , whose product is the total number of rows of the matrix. In our paper we discarded the use of multibands (r>1).
