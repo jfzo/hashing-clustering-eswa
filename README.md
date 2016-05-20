@@ -10,7 +10,7 @@
    $ ./sparse_min_hashing SIGNATURE_LEN B P FILE_IN_CLUTOS_FORMAT
   ```
 
-* Cross_jacc produces a Jaccard pairwise similarity matrix from a signature file. The number of hash functions is defined in the header of the signature file generated in the previous step. The output matrix is flushed to a matrix_2_sig[rows].txt file. The first parameter, i.e. the signature length to use for similarity estimation, must be less or equal than the number of rows in the input file.
+* Cross_jacc produces a Jaccard pairwise similarity matrix from a signature file. The number of hash functions is defined in the header of the signature file generated in the previous step. The output matrix is flushed to a `matrix_2_sig[SIGNATURE_LEN].txt` file. The first parameter, i.e. the signature length to use for similarity estimation, must be less or equal than the number of rows indicated in the header of the input file.
   ```
   $ ./cross_jacc SIGNATURE_LEN signature-input-file
   ```
