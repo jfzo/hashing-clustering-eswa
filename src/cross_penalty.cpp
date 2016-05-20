@@ -21,15 +21,16 @@ int i, j, k;
 int main(int argc, char* argv[])
 {
 
-    if(argc != 3){
-        cerr<<"Usage: "<< argv[0] <<" hyp-input-filename penalty-input-filename\n";
+    if(argc != 4){
+        cerr<<"Usage: "<< argv[0] <<" SIGNATURELEN(<= signature len in hyp-file) hyp-input-filename penalty-input-filename\n";
         return -1;
     }
 
     string line;
     //string foo = std::to_string(rows);
-    string filename1(argv[1]);//path to hyp file
-    string filename2(argv[2]);//path to penalty file
+    int n = atoi(argv[1]);
+    string filename1(argv[2]);//path to hyp file
+    string filename2(argv[3]);//path to penalty file
 
     // ifstream myfile ("sorted_rows.txt"); // 10x8
     //ifstream myfile ("tf-idf-hyp["+foo+"].txt");
@@ -59,20 +60,22 @@ int main(int argc, char* argv[])
         cout << "Rows:"<<rows<<" cols:"<<cols<<endl;
     }
 
+    assert(n <= rows );
+
     float** jaccard_graph = new float*[cols];// [cols][cols];
     for(i=0; i<cols; i++)
         jaccard_graph[i] = new float[cols];
 
-    int** bit_matrix = new int*[rows];// [rows][cols];
-    for (i=0; i<rows; i++) {
+    int** bit_matrix = new int*[n];// [n][cols];
+    for (i=0; i<n; i++) {
         bit_matrix[i] = new int[cols];
         for (j=0; j<cols; j++) {
             bit_matrix [i][j] = 0;
         }
     }
 
-    int** cost_matrix = new int*[rows];// [rows][cols];
-    for(i=0; i<rows; i++)
+    int** cost_matrix = new int*[n];// [n][cols];
+    for(i=0; i<n; i++)
         cost_matrix[i] = new int[cols];
 
 
@@ -91,6 +94,8 @@ int main(int argc, char* argv[])
             }
             i++;
             j = 0;
+            if(i==n)
+                break;
         }
     } else std::cout << "Unable to open file!";
     cout << "matrix read\n";
@@ -109,6 +114,8 @@ int main(int argc, char* argv[])
             }
             i++;
             j = 0;
+            if(i==n)
+                break;
         }
     } else std::cout << "Unable to open file!";
     cout << "matrix read\n";
@@ -119,7 +126,7 @@ int main(int argc, char* argv[])
         for (j=0; j<cols; j++) {
             num = 0;
             den = 0;
-            for (k=0; k<rows; k++) {
+            for (k=0; k<n; k++) {
                 den = den + std::abs(cost_matrix[k][i]) + std::abs(cost_matrix[k][j]);
                 if (bit_matrix [k][i] == bit_matrix [k][j]) {
                     num = num + std::abs(cost_matrix[k][i]) + std::abs(cost_matrix[k][j]);
@@ -132,7 +139,8 @@ int main(int argc, char* argv[])
     }
     ofstream outfile;
     //outfile.open ("matrix_2_sig_hyp_pen["+foo+"].txt");
-    outfile.open (filename1+"_matrix_2_sig_hyp_pen.txt");
+    string foo = std::to_string(n);
+    outfile.open (filename1+"_matrix_2_sig_hyp_pen["+foo+"].txt");
     outfile << cols << "\n";
     for (i=0; i<cols; i++) {
         for (j=0; j<cols; j++) {
@@ -146,11 +154,11 @@ int main(int argc, char* argv[])
         delete[] jaccard_graph[i];
     delete[] jaccard_graph;
 
-    for (i=0; i<rows; i++) 
+    for (i=0; i<n; i++) 
         delete[] bit_matrix[i];
     delete[] bit_matrix;
 
-    for(i=0; i<rows; i++)
+    for(i=0; i<n; i++)
         delete[] cost_matrix[i];
     delete[] cost_matrix;
 

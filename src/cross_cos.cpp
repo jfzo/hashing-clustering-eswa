@@ -23,14 +23,14 @@ int i, j, k;
 int main(int argc, char* argv[])
 {
 
-    if(argc  != 2 ) {
-        cerr << "Usage: " << argv[0] << " hyp-filename-path\n";
+    if(argc  != 3 ) {
+        cerr << "Usage: " << argv[0] << " SIGNATURELEN(<= signature len in hyp-file) hyp-filename-path\n";
         return -1;
     }
 
     int rows, cols;
-    int n;// = atoi(argv[1]);
-    string filename(argv[1]);
+    int n = atoi(argv[1]);
+    string filename(argv[2]);
     string line;
 
  
@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
         cout << "rows:"<<rows << " cols:" << cols << endl;
     }
 
-    n = rows;
+    assert(n <= rows);
     string foo = std::to_string(n);
 
     float** cosine_graph = new float*[cols];// [cols][cols];
@@ -66,8 +66,8 @@ int main(int argc, char* argv[])
             cosine_graph[i][j] = 0.0;
     }
 
-    int** bit_matrix = new int*[rows];
-    for (i=0; i<rows; i++) {
+    int** bit_matrix = new int*[n];
+    for (i=0; i<n; i++) {
         bit_matrix[i] = new int[cols];
         for (j=0; j<cols; j++) {
             bit_matrix [i][j] = 0;
@@ -91,6 +91,8 @@ int main(int argc, char* argv[])
             }
             i++;
             j = 0;
+            if(i==n)
+                break;
         }
     } else std::cout << "Unable to open file!";
     cout << "matrix read\n";
@@ -99,7 +101,7 @@ int main(int argc, char* argv[])
     float norms [cols];
     for (j=0; j < cols; j++) {
         norms[j] = 0;
-        for (i=0; i < rows; i++) {
+        for (i=0; i < n; i++) {
             norms[j] = norms[j] + pow(bit_matrix[i][j],2);
         }
         norms[j] = sqrt(norms[j]);
@@ -110,7 +112,7 @@ int main(int argc, char* argv[])
         for (j=0; j<cols; j++) {
             num = 0;
             den = norms[i]*norms[j];
-            for (k=0; k<rows; k++) {
+            for (k=0; k<n; k++) {
                 num = num + bit_matrix[k][i]*bit_matrix[k][j];
             }
             cosine_graph [i][j] = ((float)num/(float)den);
@@ -139,7 +141,7 @@ int main(int argc, char* argv[])
     delete[] cosine_graph;
 
 
-    for(i=0; i<rows; i++)
+    for(i=0; i<n; i++)
         delete[] bit_matrix[i];
     delete[] bit_matrix;
 
