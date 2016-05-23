@@ -59,48 +59,6 @@ it generates matrix-200-penalty-hyp-[200-1].txt. No significant improvements wer
 
 ## Results
 
-### Entropy statistics
-
-| k  | Cosine | RH-500|RH-1000 | RH-1500 | RH-2000 | RHp-500  |RHp-1000  | RHp-1500 | RHp-2000 |
-|---:|:------:|:-----:|:------:|:-------:|:-------:|:--------:|:--------:|:--------:|:--------:|
-| 5  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|10  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|15  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|20  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-
-
-### Purity statistics
-
-| k  | Cosine | RH-500|RH-1000 | RH-1500 | RH-2000 | RHp-500  |RHp-1000  | RHp-1500 | RHp-2000 |
-|---:|:------:|:-----:|:------:|:-------:|:-------:|:--------:|:--------:|:--------:|:--------:|
-| 5  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|10  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|15  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|20  |   XXX  |  XXX  |  XXX   |   XXX   |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-
-
-### Entropy
-
-| k  | Jaccard| MW-2000 | MWb-500  |MWb-1000  | MWb-1500 | MWb-2000 |
-|---:|:------:|:-------:|:--------:|:--------:|:--------:|:--------:|
-| 5  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|10  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|15  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|20  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-
-
-#### Purity
-
-| k  | Jaccard| MW-2000 | MWb-500  |MWb-1000  | MWb-1500 | MWb-2000 |
-|---:|:------:|:-------:|:--------:|:--------:|:--------:|:--------:|
-| 5  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|10  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|15  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-|20  |   XXX  |   XXX   |   XXX    |   XXX    |   XXX    |   XXX    |
-
-
----
-
 #### Entropy 20-ng
 
 | k   | Jaccard| MW-500   |  MW-1000 | MW-1500  | MW-2000  |MWb-500   |MWb-1000 | MWb-1500 | MWb-2000 |
