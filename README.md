@@ -196,7 +196,7 @@ it generates matrix-200-penalty-hyp-[200-1].txt. No significant improvements wer
 
 ### Random hyperplanes Approximation
 
-#### Entropy  20-ng-tfidf-m5.dat-hyp[2000].txt_matrix_2_sig_hyp[2000].txt 
+#### Entropy  20-ng
 
 |  k  | Cosine| RH-500 |  RH-1000 | RH-1500 | RH-2000 |RH-p-500  |RH-p-1000  | RH-p-1500 | RH-p-2000 |
 |----:|:-----:|:--------:|:-------:|:--------:|:--------:|:--------:|:-------:|:--------:|:--------:|
@@ -206,7 +206,7 @@ it generates matrix-200-penalty-hyp-[200-1].txt. No significant improvements wer
 |  20 |  'XX' |  0.528  |  0.528  |  0.528  |  0.528  |   0.528 |  0.528 |  0.528 |  0.528 |
 
 
-#### Purity  20-ng-tfidf-m5.dat-hyp[2000].txt_matrix_2_sig_hyp[2000].txt 
+#### Purity  20-ng
 
 |  k  | Cosine| RH-500 |  RH-1000 | RH-1500 | RH-2000 |RH-p-500  |RH-p-1000  | RH-p-1500 | RH-p-2000 |
 |----:|:-----:|:--------:|:-------:|:--------:|:--------:|:--------:|:-------:|:--------:|:--------:|
