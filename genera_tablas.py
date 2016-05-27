@@ -25,8 +25,8 @@ for line in fileinput.input():
     else:
         name = fields[0]
 
-#print etable
-#print ptable
+#print "Entropy:\n",etable
+#print "Purity:\n",ptable
 
 # Primero Entropy
 print "\n#### Entropy ",name,"\n"

@@ -58,6 +58,7 @@ int main(int argc, char* argv[])
 
     assert(n <= rows);
     string foo = std::to_string(n);
+    cout << "Using "<<foo<<"-length signatures."<<endl;
 
     float** cosine_graph = new float*[cols];// [cols][cols];
     for(i=0; i<cols; i++){
@@ -122,6 +123,8 @@ int main(int argc, char* argv[])
     ofstream outfile;
     // outfile.open ("matrix_1_hyp.txt");
     //outfile.open ("matrix_2_sig_hyp["+foo+"].txt");
+
+    cout << "Writing similarity matrix to file: "<< filename<<"_matrix_2_sig_hyp["<<foo<<"].txt"<<endl;
     outfile.open (filename+"_matrix_2_sig_hyp["+foo+"].txt");
 
 
@@ -129,7 +132,7 @@ int main(int argc, char* argv[])
 
     for (i=0; i<cols; i++) {
         for (j=0; j<cols; j++) {
-            outfile << setprecision(2) << fixed << cosine_graph [i][j] << ' ';
+            outfile << setprecision(6) << fixed << cosine_graph [i][j] << ' ';
         }
         outfile << "\n";
     }

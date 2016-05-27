@@ -121,7 +121,7 @@ int main(int argc, char* argv[])
             // sim = (2*jaccard_graph [i][j])-1; // cosine sim
             // if (sim < 0) sim = 0;
             sim = jaccard_graph[i][j]; // jaccard sim
-            outfile << setprecision(4) << fixed << sim << ' ';
+            outfile << setprecision(5) << fixed << sim << ' ';
         }
         outfile << "\n";
     }

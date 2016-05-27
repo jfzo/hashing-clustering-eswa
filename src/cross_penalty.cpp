@@ -144,7 +144,7 @@ int main(int argc, char* argv[])
     outfile << cols << "\n";
     for (i=0; i<cols; i++) {
         for (j=0; j<cols; j++) {
-            outfile << setprecision(4) << fixed << jaccard_graph [i][j] << ' ';
+            outfile << setprecision(5) << fixed << jaccard_graph [i][j] << ' ';
         }
         outfile << "\n";
     }

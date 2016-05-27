@@ -182,7 +182,7 @@ int main(int argc, char* argv[])
             base = (float)graph (i,j)/(float)b;
             graph (i,j)>0?exponent=(float)1/(float)(r*graph (i,j)):exponent=1;
             weight = std::pow(base,exponent);
-            outfile << setprecision(2) << fixed << weight << ' ';
+            outfile << setprecision(5) << fixed << weight << ' ';
         }
         outfile << "\n";
     }

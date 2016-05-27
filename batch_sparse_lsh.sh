@@ -4,5 +4,5 @@
 
 #for i in 500 1000 1500 2000; do
 for i in 1500; do
-    ./sparse_lsh $i 1 $1
+    ./sparse_lsh $i 3 $1
 done
