@@ -6,9 +6,10 @@
 #include <boost/tokenizer.hpp>
 #include <boost/numeric/ublas/matrix_sparse.hpp>
 #include <boost/numeric/ublas/io.hpp>
-#define cols 2612
-#define rows 32095
-#define n 200
+#define cols 4743
+#define rows 41223
+#define n 2000
+
 
 using namespace std;
 using namespace boost::numeric::ublas;
@@ -23,7 +24,7 @@ int main() {
    string line;
    string foo = std::to_string(n);
    // ifstream myfile ("sorted_rows.txt"); // 10x8
-   ifstream myfile ("tf-idf-hyp["+foo+"].txt");
+   ifstream myfile ("20-ng-tfidf-m5.dat_r41223c4743.dense-hyp[2000].txt");
    // ifstream myfile ("tf-idf.cols");
    boost::char_separator<char> sep(" ");
    string val_wr;
@@ -77,10 +78,10 @@ int main() {
    }
    ofstream outfile;
    // outfile.open ("matrix_1_hyp.txt");
-   outfile.open ("matrix_2_sig_hyp["+foo+"].txt");
+   outfile.open ("20-ng-tfidf-m5.dat_r41223c4743.dense-matrix_2_sig_hyp["+foo+"].txt");
    for (i=0; i<cols; i++){
       for (j=0; j<cols; j++){
-	outfile << setprecision(2) << fixed << cosine_graph [i][j] << ' ';
+	outfile << setprecision(10) << fixed << cosine_graph [i][j] << ' ';
       }
       outfile << "\n";
    }

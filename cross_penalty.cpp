@@ -6,8 +6,9 @@
 #include <boost/tokenizer.hpp>
 #include <boost/numeric/ublas/matrix_sparse.hpp>
 #include <boost/numeric/ublas/io.hpp>
-#define cols 2612
-#define rows 200
+#define cols 4743
+#define rows 1500
+
 
 using namespace std;
 using namespace boost::numeric::ublas;
@@ -23,7 +24,7 @@ int main(int argc, char* argv[]) {
    string line;
    string foo = std::to_string(rows);
    // ifstream myfile ("sorted_rows.txt"); // 10x8
-   ifstream myfile ("tf-idf-hyp["+foo+"].txt");
+   ifstream myfile ("20-ng-tfidf-m5.dat_r41223c4743.dense-hyp[1500].txt");
    // ifstream myfile ("tf-idf["+foo+"].txt");
    boost::char_separator<char> sep(" ");
    string val_wr;
@@ -33,7 +34,7 @@ int main(int argc, char* argv[]) {
 	bit_matrix [i][j] = 0;
       }
    }
-   ifstream penalty ("penalty-hyp["+foo+"].txt");
+   ifstream penalty ("20-ng-tfidf-m5.dat_r41223c4743.dense-penalty-hyp[1500].txt");
    i = 0;
    j = 0;
    if (myfile.is_open()){
@@ -91,7 +92,7 @@ int main(int argc, char* argv[]) {
       // cout << std::to_string(i) << endl;
    }
    ofstream outfile;
-   outfile.open ("matrix_2_sig_hyp_pen["+foo+"].txt");
+   outfile.open ("20-ng-tfidf-m5.dat_r41223c4743.dense-matrix_2_sig_hyp_pen["+foo+"].txt");
    for (i=0; i<cols; i++){
       for (j=0; j<cols; j++){
 	outfile << setprecision(4) << fixed << jaccard_graph [i][j] << ' ';

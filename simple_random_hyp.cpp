@@ -3,11 +3,18 @@
 #include <fstream>
 #include <boost/tokenizer.hpp>
 #include <boost/numeric/ublas/io.hpp>
-#define cols 2612
-#define rows 32095
+
+//#define cols 2612
+//#define rows 32095
 #define B 10000
 #define P 10007
-#define n 200
+#define n 1500
+
+
+#define rows 41223
+#define cols 4743
+
+
 
 // n: num of hash funcs, B: num buckets, P: prime (P>B)
 
@@ -38,7 +45,7 @@ int main() {
       }
    }
    string line;
-   ifstream myfile ("tf-idf.cols");
+   ifstream myfile ("20-ng-tfidf-m5.dat_r41223c4743.dense");
    boost::char_separator<char> sep(" ");
    string val_wr;
    int val;
@@ -88,8 +95,8 @@ int main() {
    // Signature flush, file output
    ofstream outfile;
    ofstream penalty;
-   outfile.open ("tf-idf-hyp["+std::to_string(n)+"].txt");
-   penalty.open ("penalty-hyp["+std::to_string(n)+"].txt");
+   outfile.open ("20-ng-tfidf-m5.dat_r41223c4743.dense-hyp["+std::to_string(n)+"].txt");
+   penalty.open ("20-ng-tfidf-m5.dat_r41223c4743.dense-penalty-hyp["+std::to_string(n)+"].txt");
    for (i=0; i<n; i++){
       for (j=0; j<cols; j++){
 	if (signature[i][j] >= 0) outfile << "1 ";
