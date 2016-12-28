@@ -1,5 +1,10 @@
 # hashing-clustering-eswa
 
+## About the work 
+The code available in this repository corresponds to the one used in the experiments of the article:
+
+__Juan Zamora, Marcelo Mendoza, Héctor Allende__, _Hashing-based clustering in high dimensional data_, In _Expert Systems with Applications_, Volume 62, 15 November 2016, Pages 202-211, ISSN 0957-4174, [http://dx.doi.org/10.1016/j.eswa.2016.06.008](http://dx.doi.org/10.1016/j.eswa.2016.06.008)
+
 ## Compiling and running our codes
 
 * __Note:__ you need to compile each source code using g++ -std=c++0x -o foo.o foo.cpp
