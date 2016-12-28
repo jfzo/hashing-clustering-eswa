@@ -63,7 +63,13 @@
 * Exact solutions: matrix_1.txt (Jaccard), matrix_2.txt (cosine).
 * Min-wise: matrix_2_sig[n].txt (original), matrix-tf-idf[n]-[b-r].txt (bucket-traversal).
 * Random hyperplanes: matrix_2_sig_hyp[n].txt (original), matrix_2_sig_hyp_pen[n].txt (Hamming penalized)
-* Cluto clustering: scluster -clmethod=graph -grmodel=sd -nnbrs=30 -rclassfile=tf-idf.dat.rlabel matrix*.txt k, where k is the number of clusters.
+* Cluto clustering command: 
+
+```
+$ scluster -clmethod=graph -grmodel=sd -nnbrs=30 -rclassfile=tf-idf.dat.rlabel matrix_XX.txt k
+```
+
+, where k is the number of clusters.
 
 
 ## Discarded in this paper
